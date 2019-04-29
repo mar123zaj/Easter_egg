@@ -24,7 +24,6 @@ def f_p(args):
 def p_e(args):
     eg,r,p=egg(),'',f_p(args)
     for n, l in enumerate(eg):
-        print(len(l))
         if n!=0 and n!=44:
             b=l.index("@")+l.count("@")//2
             if n<len(p) and 1<len(p):l=l[:b]+(p[n])[b:60-b]+l[60-b:]
@@ -35,5 +34,5 @@ if __name__=="__main__":
     except IndexError:
         r=''
         for x in egg():r+=x+'\n'
-        print(r)
-    else:print(p_e(a.split(":")))
+        print(r,end="")
+    else:print(p_e(a.split(":")),end="")
